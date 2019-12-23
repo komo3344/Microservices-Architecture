@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="320fc06b-d4cb-4d9c-8ad7-475746445c8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MSA_Project/app/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSA_Project/MSA_Project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSA_Project/MSA_Project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSA_Project/app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSA_Project/app/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSA_Project/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSA_Project/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSA_Project/app/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSA_Project/app/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSA_Project/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSA_Project/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MSA_Project/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MSA_Project/app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,6 +27,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Django-Projects/Data-analysis" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,7 +41,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.serializers">
+  <component name="RunManager" selected="Python.urls">
     <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Toy-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,6 +105,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Toy-Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MSA_Project/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MSA_Project/app/urls.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Toy-Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,6 +149,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.urls" />
         <item itemvalue="Python.serializers" />
         <item itemvalue="Python.models" />
         <item itemvalue="Python.settings" />
@@ -140,7 +158,7 @@
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\ZB-PC087\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
