@@ -112,6 +112,8 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+AUTH_USER_MODEL = 'app.User'
+
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
@@ -131,3 +133,4 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),  # 유효기간
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),  # 갱신기간
 }
+
