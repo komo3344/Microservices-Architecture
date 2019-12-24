@@ -8,4 +8,6 @@ urlpatterns = [
     path('api-token-refresh/', refresh_jwt_token),
     path('api-token-verity/', verify_jwt_token),
 
+    path('rest-auth/', include('rest_auth.urls')),
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
 ]

@@ -27,10 +27,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'rest_framework',
-    'rest_framework.authtoken',
+    'rest_framework.authtoken',     # rest-auth
+    'rest_auth',                    # rest-auth
     'corsheaders',
-]
 
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',   # 회원가입
+]
+SITE_ID = 1
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -113,7 +119,8 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'app.User'
-
+REST_USE_JWT = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
@@ -133,4 +140,3 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),  # 유효기간
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),  # 갱신기간
 }
-
