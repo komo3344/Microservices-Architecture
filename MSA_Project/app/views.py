@@ -4,6 +4,6 @@ from .serializers import UserSerializer
 
 
 class UserList(generics.ListCreateAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = UserSerializer
