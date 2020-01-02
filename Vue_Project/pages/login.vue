@@ -1,25 +1,43 @@
 <template>
+<section class="container">
   <div class="login">
-    <h3>로그인</h3>
-    <input type="text" placeholder="ID를 입력하세요"><br>
-    <input type="password" placeholder="비밀번호를 입력하세요"><br>
-    <button @click="test()">로그인</button>
+    <h3>로그인</h3><br>
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="text" class="form-control" id="id" placeholder="ID를 입력하세요" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력하세요" name="pswd" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" @click="login()">로그인</button>
     <p>계정이 없으신가요? <nuxt-link to="/signup">회원가입하러 가기</nuxt-link></p>
   </div>
+</section>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'login',
-  layout: 'nav',
   data(){
     return{
-
+      token: ''
     }
   },
   methods: {
-    test: () =>{
-      alert('clicked!')
+    login: () =>{
+      axios.post('http://127.0.0.1:8000/rest-auth/login/', {username: id.value, password: password.value})
+      .then(res=>{
+        console.log(res)
+        alert('id: ' + res.data.user.username)
+        })
+      
     }
   }
 }
@@ -27,6 +45,9 @@ export default {
 
 <style>
   .login {
-    text-align: center
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    text-align: center;
   }
 </style>

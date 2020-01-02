@@ -1,10 +1,19 @@
 <template>
-  <div>
-    <nav/>
+  <div class="container">
+    <TheNavbar/>
     <nuxt/>
   </div>
 </template>
+<script>
 
+import TheNavbar from '@/layouts/TheNavbar'
+  export default {
+  components:{
+  TheNavbar
+  }
+}
+
+</script>
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

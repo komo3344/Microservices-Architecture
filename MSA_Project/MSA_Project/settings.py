@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rest_auth.registration',   # 회원가입
+    'allauth.socialaccount',
 ]
 SITE_ID = 1
 MIDDLEWARE = [

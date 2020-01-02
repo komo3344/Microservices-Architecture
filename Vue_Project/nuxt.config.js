@@ -1,4 +1,21 @@
+const webpack = require("webpack")
+
 module.exports = {
+  plugins: [
+    "plugins/bootstrap.js"
+  ],
+  css: [
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  ],
+  module: [
+    '@nuxtjs/axios',
+  ],
+
+  // axios: {
+  //   '/': {
+  //     target: 'http://localhost:8000'
+  //   } 
+  // },
   /*
   ** Headers of the page
   */
@@ -21,10 +38,13 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** Run ESLint on save
-    */
-    vendor: ['axios'],
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery"
+      })
+    ],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

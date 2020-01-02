@@ -1,27 +1,58 @@
 <template>
+<section class="container">
   <div class="signup">
-    <h3>회원가입</h3>
-    ID: <input type="text" placeholder="ID를 입력하세요"><br>
-    email: <input type="email" placeholder="e-mail을 입력하세요"><br>
-    password1: <input type="password1" placeholder="비밀번호를 입력하세요"><br>
-    password2: <input type="password2" placeholder="비밀번호를 한번 더 입력하세요"><br>
-    <button @click="signup()">회원가입</button>
+    <h3>회원가입</h3> <br />
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="text" class="form-control" id="id" placeholder="ID를 입력하세요" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" class="form-control" id="email" placeholder="이메일을 입력하세요" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="password1">Password:</label>
+      <input type="password" class="form-control" id="password1" placeholder="비밀번호를 입력하세요" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="password2">Confirm password:</label>
+      <input type="password" class="form-control" id="password2" placeholder="비밀번호를 한번 더 입력하세요" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" @click="signup()">회원가입</button>
   </div>
-  
+</section>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'signup',
-  layout: 'nav',
   data(){
     return{
-
+      id: '',
+      email: '',
+      password1: '',
+      password2: ''
     }
   },
   methods: {
     signup: () => {
-      console.log('click')
+      axios.post('http://127.0.0.1:8000/rest-auth/registration/', 
+      {username: id.value, email: email.value, password1: password1.value, password2:password2.value})
+      .then(res => {
+        console.log(res)
+        alert(res.data.token)
+      })
+      
     }
   }
 }
@@ -29,6 +60,11 @@ export default {
 
 <style>
   .signup {
-    text-align: center
+    position: absolute;
+    top:20%;
+    left:40%;
+
+    text-align: center;
+    
   }
 </style>

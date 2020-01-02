@@ -7,7 +7,9 @@
       <h2 class="subtitle">
         This is main page
       </h2>
+      <div class='contents'>
       {{username}}
+      </div>
     </div>
   </section>
 </template>
@@ -15,9 +17,9 @@
 <script>
 import axios from 'axios'
 export default {
-  layout: 'nav',
+  // layout: 'nav',
   async asyncData () {
-    let { data} = await axios.get('http://127.0.0.1:8000/user/')
+    let {data} = await axios.get('http://127.0.0.1:8000/user/')
     console.log(data[0].username)
     return {username: data[0].username}
   }
@@ -31,5 +33,8 @@ export default {
 }
 .container .subtitle{
   text-align: center;
+}
+.container .contents{
+  text-align: left;
 }
 </style>
