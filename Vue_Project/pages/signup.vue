@@ -41,17 +41,19 @@ export default {
       id: '',
       email: '',
       password1: '',
-      password2: ''
+      password2: '',
     }
   },
   methods: {
-    signup: () => {
+    signup() {
       axios.post('http://127.0.0.1:8000/rest-auth/registration/', 
       {username: id.value, email: email.value, password1: password1.value, password2:password2.value})
       .then(res => {
         console.log(res)
-        alert(res.data.token)
+        alert('회원가입 완료')
+        this.$router.push({name: 'login'})
       })
+      .catch(e => console.error(e))
       
     }
   }

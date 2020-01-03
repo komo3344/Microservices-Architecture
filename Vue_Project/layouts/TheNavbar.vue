@@ -70,4 +70,5 @@ padding: 2px 10px;
 .nav-content ul li:not(:first-of-type){
 border-left: 1px solid rgb(255, 255, 255,0.2);
 }
+
 </style>

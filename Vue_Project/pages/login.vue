@@ -30,14 +30,26 @@ export default {
       token: ''
     }
   },
+  created(){  // 라이프 사이클 훅 함수 설정
+    // this.$store.dispatch
+    console.log(this.$store.getters.token)
+  
+  },
   methods: {
-    login: () =>{
+    login() {
       axios.post('http://127.0.0.1:8000/rest-auth/login/', {username: id.value, password: password.value})
       .then(res=>{
         console.log(res)
-        alert('id: ' + res.data.user.username)
+        // alert('id: ' + res.data.user.username)
+        // console.log(this.$store.state.is_Login)
+        
+        // console.log(this.$store.getters.token)
+        // this.$router.push({ name: 'index'})
         })
-      
+    .catch(e => {
+      console.error(e)
+      alert('존재하지 않는 ID이거나 ID, password를 잘못 입력하셨습니다.')
+      })
     }
   }
 }

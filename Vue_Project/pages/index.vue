@@ -7,9 +7,9 @@
       <h2 class="subtitle">
         This is main page
       </h2>
-      <div class='contents'>
-      {{username}}
-      </div>
+      <!-- <div class='contents'>
+        안녕하세요 {{username}}님
+      </div> -->
     </div>
   </section>
 </template>
