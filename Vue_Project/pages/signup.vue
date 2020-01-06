@@ -4,7 +4,7 @@
     <h3>회원가입</h3> <br />
     <div class="form-group">
       <label for="id">ID:</label>
-      <input type="text" class="form-control" id="id" placeholder="ID를 입력하세요" required>
+      <input type="text" class="form-control" id="id" autofocus='true' placeholder="ID를 입력하세요" required>
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
     </div>

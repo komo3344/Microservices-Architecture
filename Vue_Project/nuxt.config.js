@@ -9,6 +9,7 @@ module.exports = {
   ],
   module: [
     '@nuxtjs/axios',
+    'nuxt-vuex-localstorage'
   ],
 
   // axios: {

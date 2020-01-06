@@ -4,7 +4,7 @@
     <h3>로그인</h3><br>
     <div class="form-group">
       <label for="id">ID:</label>
-      <input type="text" class="form-control" id="id" placeholder="ID를 입력하세요" name="uname" required>
+      <input type="text" class="form-control" id="id" placeholder="ID를 입력하세요" autofocus='true' name="uname" required>
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
     </div>
@@ -27,24 +27,20 @@ export default {
   name: 'login',
   data(){
     return{
-      token: ''
+
     }
   },
-  created(){  // 라이프 사이클 훅 함수 설정
-    // this.$store.dispatch
-    console.log(this.$store.getters.token)
-  
-  },
+
   methods: {
     login() {
       axios.post('http://127.0.0.1:8000/rest-auth/login/', {username: id.value, password: password.value})
       .then(res=>{
         console.log(res)
-        // alert('id: ' + res.data.user.username)
-        // console.log(this.$store.state.is_Login)
+        this.$store.commit('setID', res.data.user.username) // 유저id를 받아와서 state에 쓰기
+        console.log('userid: ' + this.$store.state.userID)
+        this.$store.commit('setLogin')  //유저 로그인 상태 true 변경
+        this.$router.push({ name: 'index'}) // 메인페이지 이동
         
-        // console.log(this.$store.getters.token)
-        // this.$router.push({ name: 'index'})
         })
     .catch(e => {
       console.error(e)

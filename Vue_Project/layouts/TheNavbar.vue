@@ -22,13 +22,22 @@
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
+    <li>
+      <span class="navbar-text">
+        {{this.$store.state.userID}}님
+      </span>
+    </li>
   </ul>
   </nav>
 </template>
 
 <script>
 export default {
-
+  computed: {
+    loaded() {
+      return this.$store.state.localStorage.status
+    }
+  }
 }
 </script>
 
