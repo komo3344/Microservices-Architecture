@@ -24,9 +24,10 @@
     </li>
     <li>
       <span class="navbar-text">
-        {{this.$store.state.userID}}님
+        {{this.$store.state.localStorage.userID}}님
       </span>
     </li>
+
   </ul>
   </nav>
 </template>
@@ -37,7 +38,7 @@ export default {
     loaded() {
       return this.$store.state.localStorage.status
     }
-  }
+  },
 }
 </script>
 

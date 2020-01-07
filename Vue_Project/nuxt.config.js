@@ -2,21 +2,25 @@ const webpack = require("webpack")
 
 module.exports = {
   plugins: [
-    "plugins/bootstrap.js"
+    "plugins/bootstrap.js",
+    "plugins/axios.js",
   ],
   css: [
     "node_modules/bootstrap/dist/css/bootstrap.min.css",
   ],
   module: [
     '@nuxtjs/axios',
-    'nuxt-vuex-localstorage'
+    '@nuxtjs/auth',
+    'nuxt-localstorage',
+    'nuxt-vuex-localstorage',
   ],
-
-  // axios: {
-  //   '/': {
-  //     target: 'http://localhost:8000'
-  //   } 
+  // router: {
+  //   middleware: 'auth'
   // },
+  // axios: {
+  //   baseURL: 'http://localhost:8000'
+  // },
+  
   /*
   ** Headers of the page
   */
