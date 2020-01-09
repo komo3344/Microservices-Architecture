@@ -1,6 +1,7 @@
 const webpack = require("webpack")
 
 module.exports = {
+  mode: 'universal', // SSR(서버사이드 렌더링)방식
   plugins: [
     "plugins/bootstrap.js",
     "plugins/axios.js",
@@ -14,13 +15,13 @@ module.exports = {
     'nuxt-localstorage',
     'nuxt-vuex-localstorage',
   ],
-  // router: {
-  //   middleware: 'auth'
-  // },
-  // axios: {
-  //   baseURL: 'http://localhost:8000'
-  // },
-  
+  router: {
+    middleware: 'auth'
+  },
+  axios: {
+    baseURL: process.env.baseURL || 'http://localhost:8000'
+  },
+
   /*
   ** Headers of the page
   */

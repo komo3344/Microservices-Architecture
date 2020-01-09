@@ -1,6 +1,18 @@
+// export default function ({ store, error }) {
+//   if (!store.state.authUser) {
+//     error({
+//       message: 'You are not connected',
+//       statusCode: 403
+//     })
+//   }
+// }
+import Cookie from 'js-cookie'
+
 export default function ({ store, redirect, route }) {
-  // auth 확인
-  if (!store.state.localStorage.token && route.path == 'http://127.0.0.1:3000') {
-    return redirect('http://127.0.0.1:3000/login')
+  
+  // 사용자가 인증을 하지 않은 경우.
+  console.log(store.getters.getLogin)
+  if (!store.getters.getLogin && route.path == 'http://localhost:3000') {
+    return redirect('http://localhost:3000/login')
   }
 }

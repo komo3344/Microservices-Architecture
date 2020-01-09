@@ -17,28 +17,29 @@
         Dropdown link
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="/about">About</a>
         <a class="dropdown-item" href="#">Link 2</a>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
     <li>
       <span class="navbar-text">
-        {{this.$store.state.localStorage.userID}}님
+        {{x}}님
       </span>
     </li>
-
   </ul>
   </nav>
 </template>
 
 <script>
+import Cookie from 'js-cookie'
 export default {
-  computed: {
-    loaded() {
-      return this.$store.state.localStorage.status
+  data(){
+    return{
+      x : Cookie.get('username')
     }
   },
+  
 }
 </script>
 
