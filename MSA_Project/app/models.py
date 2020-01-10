@@ -7,3 +7,8 @@ class User(AbstractUser):
 
     def __str__(self):
         return str(self.username)
+
+
+class Todo(models.Model):
+    task = models.TextField(max_length=200)
+    done = models.BooleanField(default=False)

@@ -17,8 +17,8 @@
         Dropdown link
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="/about">About</a>
-        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="/todo">TODO</a>
+        <a class="dropdown-item" href="gittodo">GTI TODO2</a>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>

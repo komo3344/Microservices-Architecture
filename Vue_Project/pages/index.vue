@@ -1,13 +1,9 @@
 <template>
   <section class="container">
     <div>
-      <h1 class="title">
-        Element Calendar UI
-      </h1>
-      <h2 class="subtitle">
-        This is main page
-      </h2>
-      <button @click="logout">로그아웃</button>
+       <nuxt-link class="btn btn-outline btn-large btn-info" to="/todo">
+        Todo 작성하러 가기 <span class="ml-5">&rarr;</span>
+      </nuxt-link>
     </div>
   </section>
 </template>
