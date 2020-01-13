@@ -3,6 +3,7 @@ const webpack = require("webpack")
 module.exports = {
   mode: 'universal', // SSR(서버사이드 렌더링)방식
   plugins: [
+    {src: '~/plugins/full-calendar', ssr: false},
     "plugins/bootstrap.js",
     "plugins/axios.js",
   ],
