@@ -16,9 +16,7 @@ module.exports = {
     'nuxt-localstorage',
     'nuxt-vuex-localstorage',
   ],
-  router: {
-    middleware: 'auth'
-  },
+
   axios: {
     baseURL: 'http://localhost:8000'
   },

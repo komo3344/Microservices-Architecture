@@ -4,17 +4,12 @@
 
     <!-- Links -->
     <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="/login">로그인</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/signup">회원가입</a>
-    </li>
+
 
     <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Dropdown link
+        할 일
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="/todo">TODO</a>
@@ -22,11 +17,21 @@
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
-    <li>
-      <span class="navbar-text">
-        {{x}}님
-      </span>
+
+    <!-- Links -->
+    <li class="nav-item">
+      <a class="nav-link" href="/signup">회원가입</a>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link" v-if="!$store.state.user" href="/login">로그인</a>
+      <a class="nav-link" v-if="$store.state.user" href="/">로그아웃</a>
+    </li>
+    <!-- <li>
+      <span class="navbar-text">
+        {{username}}님
+      </span>
+    </li> -->
   </ul>
   </nav>
 </template>
@@ -36,10 +41,14 @@ import Cookie from 'js-cookie'
 export default {
   data(){
     return{
-      x : Cookie.get('username')
+      username: ''
     }
   },
-  
+  async asyncData () {
+  let {data} = await axios.get('http://127.0.0.1:8000/me/')
+  console.log(data)
+  return {username: data}
+  }
 }
 </script>
 

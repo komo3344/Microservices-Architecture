@@ -9,9 +9,8 @@
 <script>
 
 export default {
-  mounted(){
-
-  },
+  middleware: 'auth',
+  
   data () {
     return {
 

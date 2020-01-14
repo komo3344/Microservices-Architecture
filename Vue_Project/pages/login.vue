@@ -42,10 +42,7 @@ export default {
         console.error(e)
         // alert('존재하지 않는 ID이거나 ID, password를 잘못 입력하셨습니다.')
       }
-  },
-    redirect () {
-      this.$router.push('/')
-    }
+    },
   }
 }
 </script>

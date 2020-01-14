@@ -131,6 +131,7 @@ CORS_ORIGIN_WHITELIST = (
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',  # 장고페이지에서 로그인 세션유지
     ),
 }
 

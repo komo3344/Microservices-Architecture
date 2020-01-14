@@ -13,8 +13,6 @@ import axios from 'axios'
 import Cookie from 'js-cookie'
 
 export default {
-  middleware: 'auth',
-  
   data(){
     return{
       token : Cookie.get('token')
@@ -26,11 +24,11 @@ export default {
       this.$store.commit('setLogin')
     }
   },
-    async asyncData () {
-    let {data} = await axios.get('http://127.0.0.1:8000/user/')
-    // console.log(data[0].username)
-    return {username: data[0].username}
-  }
+  //   async asyncData () {
+  //   let {data} = await axios.get('http://127.0.0.1:8000/me/')
+  //   console.log(data)
+  //   return {username: data}
+  // }
   
 }
 </script>

@@ -3,34 +3,20 @@ import Cookie from 'js-cookie'
 
 //상태 관리할 목록
 export const state = () => ({
-  is_Login: false,
   token: '',
-  userID: '',
-  authUser: null
+  user: ''
 })
 
 // mutations state 값을 변경하는 로직 (동기적으로) action은 비동기적으로 정의
 export const mutations = {
   SET_USER (state, user) {
-    state.authUser = user
+    state.user = user
   },
 
-  setLogin(state) {
-    state.is_Login = !state.is_Login
-  },
-
-  setToken: (state, token) => {
-    state.token = token
-  },
-
-  setID: (state, userID) => {
-    state.userID = userID
-  },
 
   logout: (state) => {
     state.token = '',
-    Cookie.set('token', null),
-    Cookie.set('id', null)
+    Cookie.set('token', null)
   }
 }
 
@@ -44,16 +30,19 @@ export const getters = {
   },
 }
 export const actions = {
-  nuxtServerInit ({ commit }, { req }) {
+  nuxtServerInit ({ commit }, { req }) {  // 서버단에서 store 초기값 세팅 첫페이지에서만 실행 (새로고침 포함)
+    console.log(req)
     if (req.session && req.session.authUser) {
       commit('SET_USER', req.session.authUser)
     }
   },
   async login ({ commit }, { username, password }) {
     try {
-      const { data } = await axios.post('http://localhost:8000/rest-auth/login', { username, password })
-      commit('SET_USER', data)
-    } catch (error) {
+      const { data } = await axios.post('http://localhost:8000/rest-auth/login/', { username, password })
+      commit('SET_USER', data)  // state에 유저토큰 저장
+      Cookie.set('token', data.token) // 쿠키에 토큰 저장
+      this.$router.push('/todo')  // 인증되면 todo app페이지로 이동
+     } catch (error) {
       if (error.response && error.response.status === 401) {
         throw new Error('Bad credentials')
       }
@@ -64,12 +53,18 @@ export const actions = {
   async logout ({ commit }) {
     await axios.post('http://localhost:8000/rest-auth/logout')
     commit('SET_USER', null)
+    commit('logout')
   },
 
   async addTask ({ commit }, {task}) {
     const { data } = await axios.post('http://localhost:8000/todos/', {task})
     console.log( data)
-    // commit('SET_USER', null)
+  },
+
+  async asyncData () {
+    let {data} = await axios.get('http://127.0.0.1:8000/me/')
+    console.log(data)
+    // return {username: data}
   }
 
 
