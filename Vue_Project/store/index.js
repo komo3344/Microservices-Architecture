@@ -16,7 +16,7 @@ export const mutations = {
 
   logout: (state) => {
     state.token = '',
-    Cookie.set('token', null)
+    Cookie.remove('token')
   }
 }
 
@@ -30,12 +30,12 @@ export const getters = {
   },
 }
 export const actions = {
-  nuxtServerInit ({ commit }, { req }) {  // 서버단에서 store 초기값 세팅 첫페이지에서만 실행 (새로고침 포함)
-    console.log(req)
-    if (req.session && req.session.authUser) {
-      commit('SET_USER', req.session.authUser)
-    }
-  },
+  // nuxtServerInit ({ commit }, { req }) {  // 서버단에서 store 초기값 세팅 첫페이지에서만 실행 (새로고침 포함)
+  //   console.log(req)
+  //   if (req.session && req.session.authUser) {
+  //     commit('SET_USER', req.session.authUser)
+  //   }
+  // },
   async login ({ commit }, { username, password }) {
     try {
       const { data } = await axios.post('http://localhost:8000/rest-auth/login/', { username, password })
@@ -51,9 +51,10 @@ export const actions = {
   },
 
   async logout ({ commit }) {
-    await axios.post('http://localhost:8000/rest-auth/logout')
+    await axios.post('http://localhost:8000/rest-auth/logout/')
     commit('SET_USER', null)
     commit('logout')
+    this.$router.push('/')
   },
 
   async addTask ({ commit }, {task}) {

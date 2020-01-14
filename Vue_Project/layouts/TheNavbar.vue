@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="/">Home</a>
+    <router-link to="/" class="navbar-brand">HOME</router-link>
 
     <!-- Links -->
     <ul class="navbar-nav">
@@ -12,7 +12,7 @@
         할 일
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="/todo">TODO</a>
+        <router-link to="/todo" class="dropdown-item">TODO</router-link>
         <a class="dropdown-item" href="gittodo">GTI TODO2</a>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
@@ -20,12 +20,12 @@
 
     <!-- Links -->
     <li class="nav-item">
-      <a class="nav-link" href="/signup">회원가입</a>
+      <router-link to="/signup" class="nav-link" >회원가입</router-link>
     </li>
 
     <li class="nav-item">
       <a class="nav-link" v-if="!$store.state.user" href="/login">로그인</a>
-      <a class="nav-link" v-if="$store.state.user" href="/">로그아웃</a>
+      <a class="nav-link" v-if="$store.state.user" @click.prevent="$store.dispatch('logout')">로그아웃</a>
     </li>
     <!-- <li>
       <span class="navbar-text">
