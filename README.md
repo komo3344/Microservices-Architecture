@@ -6,7 +6,7 @@ frontend: Vue
 
 DB: sqlite3
 
-Models  
+# Models  
 User
 - pk(int)
 - username(varchar)
