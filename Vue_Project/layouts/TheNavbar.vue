@@ -12,8 +12,7 @@
         할 일
       </a>
       <div class="dropdown-menu">
-        <router-link to="/todo" class="dropdown-item">TODO</router-link>
-        <a class="dropdown-item" href="gittodo">GTI TODO2</a>
+        <router-link to="/todo" class="dropdown-item">TODO APP</router-link>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>

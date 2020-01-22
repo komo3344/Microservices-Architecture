@@ -1,8 +1,11 @@
 <template>
+<div>
 <no-ssr>
   <full-calendar 
   />
 </no-ssr>
+<Modal />
+</div>
 </template>
 
 
@@ -18,11 +21,10 @@ export default {
   },
   methods:{
     handleDateClick(e){
-      console.log(arg);
-      alert(arg.date)
+
     },
     handleSelect(e){
-      console.log(e);
+
     }
   }
 }

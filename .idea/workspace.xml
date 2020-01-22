@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="320fc06b-d4cb-4d9c-8ad7-475746445c8c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vue_Project/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue_Project/middleware/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vue_Project/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue_Project/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/components/Calendar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Vue_Project/components/Calendar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/components/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/components/new-task.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/components/task-list.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/layouts/TheNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Vue_Project/layouts/TheNavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue_Project/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Vue_Project/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Vue_Project/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/pages/gittodo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/pages/todo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Vue_Project/pages/todo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue_Project/store/task.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +35,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Django-Projects/Data-analysis" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
   <component name="RunDashboard">
