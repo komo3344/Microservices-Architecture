@@ -4,7 +4,7 @@ module.exports = {
   mode: 'universal', // SSR(서버사이드 렌더링)방식
   plugins: [
     {src: '~/plugins/full-calendar', ssr: false},
-    {src: '~/plugins/timepicker', ssr: false},
+    // {src: '~/plugins/timepicker', ssr: false},
     "plugins/bootstrap.js",
     "plugins/axios.js",
   ],
@@ -14,10 +14,26 @@ module.exports = {
   module: [
     '@nuxtjs/axios',
     '@nuxtjs/auth',
+    '@nuxtjs/vuetify',
     'nuxt-localstorage',
     'nuxt-vuex-localstorage',
   ],
-
+  vuetify: {
+    // Vuetify options
+     theme: {
+       themes: {
+      light: {
+        primary: "#5755d9",
+        secondary: "#444291",
+        accent: "#444291",        
+        error: "#f44336",        
+        warning: "#ffeb3b",        
+        info: "#2196f3",        
+        success: "#4caf50"      
+      }   
+    }
+  }
+  },
   axios: {
     baseURL: 'http://localhost:8000'
   },
@@ -57,7 +73,7 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
     }

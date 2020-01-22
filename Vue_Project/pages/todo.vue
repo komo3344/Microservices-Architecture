@@ -4,7 +4,7 @@
   <full-calendar 
   />
 </no-ssr>
-<Modal />
+
 </div>
 </template>
 

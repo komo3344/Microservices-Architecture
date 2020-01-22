@@ -38,15 +38,20 @@
     "vue2-timepicker": "^1.0.7",
     "vuejs-datepicker": "^1.6.2",
     "vuejs-timepicker": "^0.1.4",
+    "vuetify": "^2.2.5",
     "webpack-dev-server": "^3.10.1"
   },
   "devDependencies": {
+    "@nuxtjs/vuetify": "^1.10.2",
     "babel-eslint": "^10.0.1",
     "bootstrap": "^4.4.1",
+    "deepmerge": "^4.2.2",
     "eslint": "^4.19.1",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^4.0.0",
-    "sass-loader": "^8.0.1"
+    "fibers": "^4.0.2",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2"
   }
 }

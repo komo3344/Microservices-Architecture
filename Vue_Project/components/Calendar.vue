@@ -15,16 +15,14 @@
         <!-- Modal body -->
         <div class="modal-body">
           할 일: <input type="text" placeholder="해야 할 일을 입력하세요."/>
-                <!-- <div class='input-group date' id='datetimepicker3'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                    </span>
-                </div> -->
-        <div class="md-form">
-          <input placeholder="Selected time" type="text" id="input_starttime" class="form-control timepicker">
-          <label for="input_starttime">Light version, 12hours</label>
-        </div>
+          <v-layout row wrap>
+            <v-flex md12 lg6>
+              <v-time-picker v-model="e4" color="green lighten-1"></v-time-picker>
+            </v-flex>
+            <v-flex md12 lg6 class="hidden-xs-only">
+              <v-time-picker v-model="e4" color="green lighten-1" header-color="primary"></v-time-picker>
+            </v-flex>
+        </v-layout>
         </div>
         
         <!-- Modal footer -->
@@ -51,10 +49,6 @@
     import FullCalendar from '@fullcalendar/vue'
     import dayGridPlugin from '@fullcalendar/daygrid'
     import interactionPlugin from '@fullcalendar/interaction'
-  // $('#datetimepicker3').timepicker({
-  //   showInputs: false
-  // });
-  $('#input_starttime').pickatime({});
     export default {
         components: {
             FullCalendar, // make the <FullCalendar> tag available
@@ -62,6 +56,7 @@
         data() {
             return {
               calendarPlugins: [ dayGridPlugin, interactionPlugin ],
+              e4: null
             }
         },
         methods:{
