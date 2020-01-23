@@ -4,7 +4,7 @@
     <h3>로그인</h3><br>
     <div class="form-group">
       <label for="id">ID:</label>
-      <input type="text" class="form-control" id="id" placeholder="ID를 입력하세요" autofocus='true' name="uname" required>
+      <input type="text" class="form-control" id="id" placeholder="ID를 입력하세요" autofocus name="uname" required>
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
     </div>
@@ -16,6 +16,7 @@
     </div>
     <button type="submit" class="btn btn-primary" @click="login()">로그인</button>
     <p>계정이 없으신가요? <nuxt-link to="/signup">회원가입하러 가기</nuxt-link></p>
+    
   </div>
 </section>
 </template>
@@ -27,7 +28,6 @@ export default {
   name: 'login',
   data(){
     return{
-
     }
   },
 

@@ -4,7 +4,8 @@ import Cookie from 'js-cookie'
 //상태 관리할 목록
 export const state = () => ({
   token: '',
-  user: ''
+  user: '',
+  task: '',
 })
 
 // mutations state 값을 변경하는 로직 (동기적으로) action은 비동기적으로 정의
@@ -13,10 +14,13 @@ export const mutations = {
     state.user = user
   },
 
-
   logout: (state) => {
     state.token = '',
     Cookie.remove('token')
+  },
+
+  addTask: (state, task) => {
+    state.task = task
   }
 }
 
@@ -59,6 +63,7 @@ export const actions = {
 
   async addTask ({ commit }, {task}) {
     const { data } = await axios.post('http://localhost:8000/todos/', {task})
+    commit('addTask', task)
     console.log( data)
   },
 
