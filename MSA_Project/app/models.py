@@ -11,4 +11,6 @@ class User(AbstractUser):
 
 class Todo(models.Model):
     task = models.TextField(max_length=200)
+    start_time = models.TimeField(null=True, blank=True)
+    end_time = models.TimeField(null=True, blank=True)
     done = models.BooleanField(default=False)

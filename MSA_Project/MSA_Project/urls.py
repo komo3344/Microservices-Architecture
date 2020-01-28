@@ -10,4 +10,5 @@ urlpatterns = [
 
     path('rest-auth/', include('rest_auth.urls')),  # use
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
+
 ]

@@ -74,10 +74,10 @@
           inputHandler (eventData) {
             console.log(eventData)
           },
-          async addTask() { // 비동기로 로그인 처리
+          async addTask() {
           try{
             await this.$store.dispatch('addTask', {
-              username: task.value,
+              task: task.value,
               start_time: start_time.value,
               end_time: end_time.value
             })
@@ -88,8 +88,8 @@
       }
     }
 </script>
-<style lang='scss'>
 
+<style lang='scss'>
 @import '~/node_modules/@fullcalendar/core/main.css';
 @import '~/node_modules/@fullcalendar/daygrid/main.css';
 @import '~/node_modules/@fullcalendar/timegrid/main.css';
